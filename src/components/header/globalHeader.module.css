@@ -1,0 +1,104 @@
+.globalHeader {
+  background-color: #f5f5f7;
+}
+
+.globalnav {
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+  display: block;
+  margin: 0;
+  width: 100%;
+  min-width: 320px;
+  height: 48px;
+  max-height: 44px;
+  font-size: 17px;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-backdrop-filter: var(--globalnav-backdrop-filter);
+  backdrop-filter: var(--globalnav-backdrop-filter);
+}
+
+.globalnav:not([dir="rtl"]) {
+  --r-globalnav-start: var(--r-sk-start, left);
+  --r-globalnav-end: var(--r-sk-end, right);
+  --r-globalnav-safe-area-inset-start: var(
+    --sk-safe-area-inset-start,
+    env(safe-area-inset-left)
+  );
+  --r-globalnav-safe-area-inset-end: var(
+    --sk-safe-area-inset-end,
+    env(safe-area-inset-right)
+  );
+  --r-globalnav-logical-factor: 1;
+}
+
+.globalnav[dir="rtl"] {
+  --r-globalnav-start: var(--r-sk-start, right);
+  --r-globalnav-end: var(--r-sk-end, left);
+  --r-globalnav-safe-area-inset-start: var(
+    --sk-safe-area-inset-start,
+    env(safe-area-inset-right)
+  );
+  --r-globalnav-safe-area-inset-end: var(
+    --sk-safe-area-inset-end,
+    env(safe-area-inset-left)
+  );
+  --r-globalnav-logical-factor: -1;
+}
+
+/* Container centralizado */
+.globalnavContent {
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1024px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-inline-start: max(22px, var(--r-globalnav-safe-area-inset-start));
+  padding-inline-end: max(22px, var(--r-globalnav-safe-area-inset-end));
+  --r-globalnav-flyout-rate: 0s;
+  --r-globalnav-duration-medium: 0.24s;
+  z-index: 2;
+}
+
+/* Itens do menu */
+.globalnavList {
+  cursor: default;
+  margin: 0 -8px;
+  width: auto;
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+  -webkit-user-select: none;
+  user-select: none;
+  list-style: none;
+}
+
+.globalnavItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 100%;
+  transform-origin: 50%;
+  transition: opacity 0.24s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.globalnavItem a {
+  color: var(--globalnav-text-color);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.globalnavItem a:hover {
+  opacity: 0.6;
+}
+
+/* Ícones do lado direito (ex: lupa, sacola) */
+.globalnavIcons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}

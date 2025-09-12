@@ -102,3 +102,12 @@
   gap: 1rem;
   align-items: center;
 }
+
+.globalNavLink {
+  display: inline-flex; /* Ícone + texto lado a lado */
+  align-items: center; /* Centraliza verticalmente */
+  gap: 6px; /* Espaço entre ícone e texto */
+  height: 100%; /* Ocupa toda a altura do link */
+  line-height: 1; /* Mantém alinhamento uniforme */
+  white-space: nowrap; /* Impede quebra de linha */
+}

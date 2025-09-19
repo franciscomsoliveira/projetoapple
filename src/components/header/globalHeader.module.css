@@ -104,10 +104,40 @@
 }
 
 .globalNavLink {
-  display: inline-flex; /* Ícone + texto lado a lado */
-  align-items: center; /* Centraliza verticalmente */
-  gap: 6px; /* Espaço entre ícone e texto */
-  height: 100%; /* Ocupa toda a altura do link */
-  line-height: 1; /* Mantém alinhamento uniforme */
-  white-space: nowrap; /* Impede quebra de linha */
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--r-globalnav-color);
+  position: relative;
+  z-index: 1;
+  padding: 0 calc(8px / var(--r-globalnav-text-zoom-scale, 1));
+  height: 44px;
+  overflow-y: hidden;
+  overflow-x: clip;
+  background: no-repeat;
+  text-decoration: none;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transition: color 0.32s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.globalNavImageRegular {
+  display: flex;
+}
+.globalNavImageCompact {
+  display: none;
+}
+@media (max-width: 833px) {
+  .globalNavImageRegular {
+    display: none;
+  }
+  .globalNavImageCompact {
+    display: flex;
+  }
 }

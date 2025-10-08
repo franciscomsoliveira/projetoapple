@@ -141,3 +141,30 @@
     display: flex;
   }
 }
+.globalNavLinkTextContainer {
+  display: flex;
+}
+
+.globalNavLinkTextContainer svg {
+  font-size: 44px;
+  max-height: 88px;
+  height: calc(var(--r-globalnav-text-zoom-scale, 1) * 1em);
+  width: auto;
+  transform: translateZ(0);
+}
+
+.globalNavMenuTrigger {
+  width: 48px;
+  border-bottom: none;
+  display: none;
+}
+
+@media (max-width: 833px) {
+  .globalNavMenuTrigger {
+    display: block;
+    z-index: 3;
+    margin: 0;
+    position: absolute;
+    inset-inline-end: max(0px, var(--r-globalnav-safe-area-inset-end) - 16px);
+  }
+}
